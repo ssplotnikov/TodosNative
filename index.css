@@ -1,0 +1,29 @@
+body {
+  background-color: rgb(227, 250, 227);
+}
+.main-container {
+  display: flex;
+  justify-content: space-between;
+}
+.todo-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border: 1px solid black;
+  margin: 0 auto;
+  padding: 10px;
+}
+.todo-title {
+}
+
+.todo-content {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 7px 0;
+}
+.todo-input > input {
+  border: none;
+  background-color: #8b8b8b46;
+}
