@@ -1,10 +1,10 @@
 //form
-const btn = document.getElementById('btnAdd');
+const btn = document.getElementById('btnAdd')
 const input = document.getElementById('todo-input')
 
-btn.addEventListener('click',AddTodo);
+btn.addEventListener('click', AddTodo)
 
 function AddTodo() {
-		console.log(input.value);
-		input.value = ''
+  input.value = ''
+  console.log(input.value)
 }
