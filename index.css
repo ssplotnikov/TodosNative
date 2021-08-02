@@ -14,8 +14,6 @@ body {
   margin: 0 auto;
   padding: 10px;
 }
-.todo-title {
-}
 
 .todo-content {
   display: flex;
@@ -32,4 +30,11 @@ body {
 #btnAdd {
   border: 1px solid black;
   cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+li.completed {
+  text-decoration: line-through;
 }

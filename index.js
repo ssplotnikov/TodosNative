@@ -1,22 +1,29 @@
 //form
-const btn = document.getElementById('btnAdd')
-const input = document.getElementById('todo-input')
+const form = document.getElementById('form')
+const input = document.getElementById('input')
+//todos
+const todos = document.getElementById('todos')
 
-btn.addEventListener('click', AddTodo)
-
-function AddTodo() {
-  if (input.value) {
-    for (i = 0; i < arr.length; i++) {
-      ul.append((li.innerHTML = input.value))
-    }
+form.addEventListener('submit', (e) => {
+  e.preventDefault()
+  //create Todo
+  const todoText = input.value
+  if (todoText) {
+    // const div = document.createElement('div')
+    const todoElement = document.createElement('li')
+    const todoDelete = document.createElement('button')
+    todoElement.innerHTML = todoText
+    todos.appendChild(todoElement)
     input.value = ''
+    //completed
+    todoElement.addEventListener('click', (e) => {
+      e.preventDefault()
+      todoElement.classList.toggle('completed')
+    })
+    //delete todo
+    todoElement.addEventListener('contextmenu', (e) => {
+      e.preventDefault()
+      todoElement.remove()
+    })
   }
-}
-
-const ul = document.createElement('ul')
-const li = document.createElement('li')
-const contblock = document.querySelector('#content-todo')
-li.innerHTML = 'Test'
-contblock.append(ul)
-
-ul.append(li)
+})
