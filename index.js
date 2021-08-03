@@ -10,12 +10,22 @@ form.addEventListener('submit', (e) => {
   //create Todo
   const todoText = input.value
   if (todoText) {
-    // const div = document.createElement('div')
     const todoElement = document.createElement('li')
-    const todoDelete = document.createElement('button')
     todoElement.innerHTML = todoText
+    todoElement.setAttribute('draggable', 'true')
     todos.appendChild(todoElement)
+
+    //drag and drop events
+    todoElement.addEventListener('dragstart', (e) => {
+      // e.target.stile.opacity = 0.5
+      console.log('dragStart')
+    })
+    todoElement.addEventListener('dragend', (e) => {
+      // e.target.stile.opacity = ''
+      console.log('dragEnd')
+    })
     input.value = ''
+
     //completed
     todoElement.addEventListener('click', (e) => {
       e.preventDefault()
@@ -32,7 +42,7 @@ form.addEventListener('submit', (e) => {
 function filterTodo(e) {
   const todoAll = todos.childNodes
   todoAll.forEach((todoAll) => {
-    if ((todoAll.nodeName === 'LI')) {
+    if (todoAll.nodeName === 'LI') {
       switch (e.target.value) {
         case 'all':
           todoAll.style.display = 'flex'
@@ -57,3 +67,20 @@ function filterTodo(e) {
     }
   })
 }
+
+//drag and drop events
+
+// todos.childNodes.forEach((todo) => {
+// todo.addEventListener('dragstart', dragStart)
+// todo.addEventListener('dragend', dragEnd)
+// })
+
+// function dragStart(e) {
+// e.target.stile.opacity = 0.5
+// console.log('dragStart')
+// }
+
+// function dragEnd(e) {
+// e.target.stile.opacity = ''
+// console.log('dragEnd')
+// }
