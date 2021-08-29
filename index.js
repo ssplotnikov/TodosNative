@@ -16,8 +16,20 @@ form.addEventListener('submit', (e) => {
     todoElement.classList.add('todo-item')
     todoElement.setAttribute('draggable', 'true')
     todoElement.innerHTML = todoText
+    todoElement.setAttribute('draggable', 'true')
     todos.appendChild(todoElement)
+
+    //drag and drop events
+    todoElement.addEventListener('dragstart', (e) => {
+      // e.target.stile.opacity = 0.5
+      console.log('dragStart')
+    })
+    todoElement.addEventListener('dragend', (e) => {
+      // e.target.stile.opacity = ''
+      console.log('dragEnd')
+    })
     input.value = ''
+
     //completed
     todoElement.addEventListener('click', (e) => {
       e.preventDefault()
